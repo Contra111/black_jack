@@ -1,5 +1,4 @@
 class Deck
-
   def initialize
     @deck = refresh_deck
   end
