@@ -33,8 +33,10 @@ class Player
   end
 
   def current_score
+    # отсортируем карты, чтобы тузы были в конце и не ломали подсчет концов
+    ordered_cards = @cards.reject { |a| a[0] == 'A' } + @cards.select { |a| a[0] == 'A' }
     @score = 0
-    @cards.each do |card|
+    ordered_cards.each do |card|
       @score += case card[0]
                 when 'J'
                   10
